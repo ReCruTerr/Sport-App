@@ -2,32 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+.joinButton {
+    @apply  block  text-white max-w-[145px] w-full uppercase text-base tracking-[0.15rem] transition-all duration-[0.3s] relative overflow-hidden z-[1] text-center py-3 rounded-[10rem] after:content-[""] after:absolute after:w-full after:h-full after:bg-[#2459A2] after:z-[-2] after:rounded-[10rem] after:left-0 after:bottom-0 before:content-[""] before:absolute before:w-[0%] before:h-full before:bg-[#393D3F] before:transition-all before:duration-[0.3s] before:z-[-1] before:rounded-[10rem] before:left-0 before:bottom-0 hover:text-white hover:before:w-full;
+  }
+  .workoutNowButton {
+    @apply  block  text-white max-w-[165px] w-full  uppercase text-base tracking-[0.15rem] transition-all duration-[0.3s] relative overflow-hidden z-[1] text-center py-3 rounded-[10rem] after:content-[""] after:absolute after:w-full after:h-full after:bg-[#2459A2] after:z-[-2] after:rounded-[10rem] after:left-0 after:bottom-0 before:content-[""] before:absolute before:w-[0%] before:h-full before:bg-[#393D3F] before:transition-all before:duration-[0.3s] before:z-[-1] before:rounded-[10rem] before:left-0 before:bottom-0 hover:text-white hover:before:w-full;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  }
+.contactButton {
+  @apply  inline-block border-[0.5px]   text-white uppercase text-base tracking-[0.15rem] transition-all duration-[0.2s] relative overflow-hidden z-[1] px-5 py-3 rounded-[10rem] after:content-[""] after:absolute after:w-full after:h-full after:bg-[rgba(0,0,0,0)] after:z-[-2] after:rounded-[10rem] after:left-0 after:bottom-0 before:content-[""] before:absolute before:w-[0%] before:h-full before:bg-[#1F629F] before:transition-all before:duration-[0.3s] before:z-[-1] before:rounded-[10rem] before:left-0 before:bottom-0 hover:text-white hover:before:w-full ;
+}
+#Field:focus::placeholder      {opacity:0; transition: opacity 0.3s ease;} 
+@media (max-width:820px) and (min-width:320px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+  };
+  .joinButton {
+    flex-wrap: nowrap;
+  };
+  #swiperCont {
+    flex-direction: column;
+  };
+  #trainingCard__mainText {
+    font-size: 25px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (max-width:950px) {
+  #priceTraining {
+    text-align: center;
   }
 }
